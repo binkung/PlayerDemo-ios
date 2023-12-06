@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BTi-jI-5zd">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Vod View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="VodViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="VodViewController" customModule="PlayerNativeDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AUi-yL-Yky"/>
+                        <viewControllerLayoutGuide type="bottom" id="DL1-Yh-Tqi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wvZ-IY-9mn" customClass="PlayerNative" customModule="PlayerNativeSDK">
+                                <rect key="frame" x="0.0" y="59" width="393" height="270"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="270" id="TAr-qc-hi8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="wvZ-IY-9mn" secondAttribute="trailing" id="5vK-xB-Vop"/>
+                            <constraint firstItem="wvZ-IY-9mn" firstAttribute="top" secondItem="AUi-yL-Yky" secondAttribute="bottom" id="DbS-WH-ftc"/>
+                            <constraint firstItem="wvZ-IY-9mn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bfq-Tt-zjw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="NCPlayerView" destination="wvZ-IY-9mn" id="cZg-1e-IQN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="35.877862595419849" y="1.4084507042253522"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="dxw-t9-qfa">
+            <objects>
+                <viewController storyboardIdentifier="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BTi-jI-5zd" customClass="MainViewController" customModule="PlayerNativeDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="L5d-sE-RIc"/>
+                        <viewControllerLayoutGuide type="bottom" id="HBy-gz-5YO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="opz-V0-sGG">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6K-FE-HxH">
+                                <rect key="frame" x="249.66666666666666" y="394" width="52.333333333333343" height="40.333333333333314"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="vod"/>
+                                <connections>
+                                    <action selector="movePage:" destination="BTi-jI-5zd" eventType="touchUpInside" id="pUH-LK-cy9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VIq-dL-8YS">
+                                <rect key="frame" x="114.00000000000001" y="394" width="49.666666666666671" height="40.333333333333314"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="live"/>
+                                <connections>
+                                    <action selector="livePageMove:" destination="BTi-jI-5zd" eventType="touchUpInside" id="OuG-Il-w8t"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="z6K-FE-HxH" firstAttribute="baseline" secondItem="VIq-dL-8YS" secondAttribute="baseline" id="Smo-Nq-fqt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="z6K-FE-HxH" secondAttribute="trailing" constant="75" id="kMg-7d-bc2"/>
+                            <constraint firstItem="VIq-dL-8YS" firstAttribute="leading" secondItem="opz-V0-sGG" secondAttribute="leading" constant="114" id="kit-Ig-vjU"/>
+                            <constraint firstItem="z6K-FE-HxH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VIq-dL-8YS" secondAttribute="trailing" constant="8" symbolic="YES" id="pkU-fj-Z0e"/>
+                            <constraint firstItem="VIq-dL-8YS" firstAttribute="top" secondItem="L5d-sE-RIc" secondAttribute="bottom" constant="335" id="qeq-OJ-3gb"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kFc-Yj-QDZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-831.29770992366412" y="0.70422535211267612"/>
+        </scene>
+        <!--Live View Controller-->
+        <scene sceneID="nv8-Xi-pAG">
+            <objects>
+                <viewController storyboardIdentifier="LiveViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cU9-5O-Wot" customClass="LiveViewController" customModule="PlayerNativeDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Su0-2z-1Qi"/>
+                        <viewControllerLayoutGuide type="bottom" id="JaR-DJ-OUP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qy1-6Y-id5">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Voq-al-ujL" customClass="PlayerNative" customModule="PlayerNativeSDK">
+                                <rect key="frame" x="0.0" y="59" width="393" height="258"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="270" id="xhr-rJ-UU7"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Voq-al-ujL" firstAttribute="leading" secondItem="qy1-6Y-id5" secondAttribute="leading" id="ana-vW-Uax"/>
+                            <constraint firstItem="Voq-al-ujL" firstAttribute="top" secondItem="Su0-2z-1Qi" secondAttribute="bottom" id="hC0-sW-3Sz"/>
+                            <constraint firstAttribute="trailing" secondItem="Voq-al-ujL" secondAttribute="trailing" id="hVc-DW-fWx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="NCPlayerView" destination="Voq-al-ujL" id="cAK-er-LsE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4PM-yK-WD4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="988.54961832061065" y="0.70422535211267612"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
