@@ -1,3 +1,3 @@
 # playerDemo-ios
 
-ios Player SDK 작업 
+ios Player SDK 작업 Demo
